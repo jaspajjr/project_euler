@@ -1,6 +1,6 @@
 // find the sum of all the multiples of 3 or 5 below 1000
 //
-var upperLim = 10
+var upperLim = 1000
 
 // to do this we need to iterate over every integer between 0 and 100, and check
 // if it is a multiple of 3 or 5
@@ -26,8 +26,9 @@ function sumMultiplesN(N){
   }, []);
   // now that we have an array of unique multiples lower than N we just need to
   // sum them
-  console.log(multipleArray)
-  answer = multipleArray.reduce((a, b) => a + b, 0);
+  var multipleArraySet = Array.from(new Set(multipleArray))
+  console.log(multipleArraySet)
+  answer = multipleArraySet.reduce((a, b) => a + b, 0);
   return answer
 }
 
